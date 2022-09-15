@@ -40,13 +40,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // initializing our firebase in main activity
+        // initializing firebase in main activity
         FirebaseApp.initializeApp(this);
 
         // finding the elements by their id's alloted.
         cameraButton = findViewById(R.id.camera_button);
 
-        // setting an onclick listener to the button so as
+        // setting an onclick listener to the button
         // to request image capture using camera
         cameraButton.setOnClickListener(
                 new View.OnClickListener() {
@@ -64,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
                                     intent, REQUEST_IMAGE_CAPTURE);
                         }
                         else {
-                            // if the image is not captured, set
-                            // a toast to display an error image.
                             Toast
                                     .makeText(
                                             MainActivity.this,
@@ -164,8 +162,6 @@ public class MainActivity extends AppCompatActivity {
                             i++;
                         }
 
-                        // if no face is detected, give a toast
-                        // message.
                         if (firebaseVisionFaces.size() == 0) {
                             Toast
                                     .makeText(MainActivity.this,
